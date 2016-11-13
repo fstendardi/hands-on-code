@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "firstName": "Mario",
+    "lastName": "Rossi",
+    "avatar": "/assets/images/user.png"
+  },
+  {
+    "id": 2,
+    "firstName": "Mauro",
+    "lastName": "Verdi",
+    "avatar": "/assets/images/user.png"
+  },
+  {
+    "id": 3,
+    "firstName": "Pietro",
+    "lastName": "Neri",
+    "avatar": "/assets/images/user.png"
+  },
+  {
+    "id": 4,
+    "firstName": "Giovanni",
+    "lastName": "Bianchi",
+    "avatar": "/assets/images/user.png"
+  },
+  {
+    "id": 5,
+    "firstName": "Antonio",
+    "lastName": "Violetti",
+    "avatar": "/assets/images/user.png"
+  }
+]
