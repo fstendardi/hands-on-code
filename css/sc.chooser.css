@@ -1,0 +1,45 @@
+.sc-chooser-container{
+  overflow: auto;
+}
+
+.sc-chooser-container .list-group{
+  margin-bottom: 0px;
+}
+
+.sc-chooser-candidates,
+.sc-chooser-controls,
+.sc-chooser-choices{
+  float: left;
+}
+
+.sc-chooser-candidates,
+.sc-chooser-choices{
+  width: 40%;
+  height: 300px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.sc-chooser-controls{
+  width: 20%;
+  
+}
+
+.sc-chooser-item{
+  border: 0px;
+  padding: 5px 10px;
+}
+
+.sc-chooser-controls .btn{
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.sc-chooser-controls .btn:first-child{
+  margin-top: 0px;
+}
+
+.sc-chooser-filter{
+  padding: 10px;
+}
