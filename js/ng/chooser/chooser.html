@@ -1,0 +1,61 @@
+{{vm.idIndex}}
+<div class="sc-chooser-container">
+  <div class="sc-chooser-candidates">
+    <div class="input-group sc-chooser-filter" ng-if="vm.filterEnabled">
+      <input type="text" class="form-control" name="search" ng-model="vm.candidatesFilter">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+      </div>
+    </div>
+    
+    <div class="list-group">
+      <a  href=""      
+          class="list-group-item sc-chooser-item" 
+          ng-repeat="item in vm.items | filter:vm.isCandidate"
+          ng-class="{'active': vm.selectedCandidates[item.id]}"
+          ng-click="vm.candidateClick(item, $event)">             
+        {{item.text}}
+      </a>
+    </div>
+  </div>
+  <div class="sc-chooser-controls">
+    <button type="button" 
+            class="btn btn-default btn-move-right" 
+            ng-click="vm.chooseSelectedItems()">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+    <button type="button" 
+            class="btn btn-default btn-move-left"
+            ng-click="vm.unchooseSelectedItems()">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </button>
+    <button type="button" 
+            class="btn btn-default btn-move-right-all"
+            ng-click="vm.chooseAllItems()">
+      <span class="glyphicon glyphicon-fast-forward"></span>
+    </button>
+    <button type="button" 
+            class="btn btn-default btn-move-left-all"
+            ng-click="vm.unchooseAllItems()">
+      <span class="glyphicon glyphicon-fast-backward"></span>
+    </button>
+  </div>
+  <div class="sc-chooser-choices">
+    <div class="input-group sc-chooser-filter" ng-if="vm.filterEnabled">
+      <input type="text" class="form-control" name="search" ng-model="vm.choicesFilter">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-search"></span>
+      </div>
+    </div>
+    <div class="list-group">
+      <a href="" 
+         class="list-group-item sc-chooser-item" 
+         ng-repeat="item in vm.items | filter:vm.isChosen | orderBy:vm.sortMap[item.id]"
+         ng-class="{'active': vm.selectedChoices[item.id]}"
+         ng-click="vm.choiceClick(item, $event)">
+        {{item.text}}
+      </a>
+    </div>
+  </div>
+
+</div>

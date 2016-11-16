@@ -25,9 +25,10 @@
   
 }
 
-.sc-chooser-item{
+.sc-chooser-item.list-group-item{
   border: 0px;
   padding: 5px 10px;
+  border-radius: 0px;
 }
 
 .sc-chooser-controls .btn{

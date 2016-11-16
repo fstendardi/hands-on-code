@@ -1,0 +1,30 @@
+{
+  "name": "hands-on-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "connect": "^3.5.0",
+    "jquery": "^1.11.3",
+    "select2": "^4.0.3",
+    "select2-bootstrap-theme": "^0.1.0-beta.9",
+    "serve-static": "^1.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fstendardi/hands-on-code.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fstendardi/hands-on-code/issues"
+  },
+  "homepage": "https://github.com/fstendardi/hands-on-code#readme"
+}
