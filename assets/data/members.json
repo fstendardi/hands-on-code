@@ -9,13 +9,13 @@
     "id": 2,
     "firstName": "Mauro",
     "lastName": "Verdi",
-    "avatar": "/assets/images/user.png"
+    "avatar": "/assets/images/avatar-hawkeye.png"
   },
   {
     "id": 3,
     "firstName": "Pietro",
     "lastName": "Neri",
-    "avatar": "/assets/images/user.png"
+    "avatar": "/assets/images/avatar-iron-man.png"
   },
   {
     "id": 4,
@@ -27,6 +27,12 @@
     "id": 5,
     "firstName": "Antonio",
     "lastName": "Violetti",
-    "avatar": "/assets/images/user.png"
+    "avatar": "/assets/images/avatar-thor.png"
+  },
+  {
+    "id": 6,
+    "firstName": "Maria",
+    "lastName": "Antonietta",
+    "avatar": "/assets/images/avatar-black-widow.png"
   }
 ]

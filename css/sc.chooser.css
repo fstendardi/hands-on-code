@@ -2,7 +2,7 @@
   overflow: auto;
 }
 
-.sc-chooser-container .list-group{
+.sc-chooser-container .sc-chooser-items{
   margin-bottom: 0px;
 }
 
@@ -15,8 +15,12 @@
 .sc-chooser-candidates,
 .sc-chooser-choices{
   width: 40%;
-  height: 300px;
   border: 1px solid #ccc;
+}
+
+.sc-chooser-candidates .sc-chooser-items,
+.sc-chooser-choices .sc-chooser-items{
+  height: 250px;
   overflow-y: auto;
 }
 

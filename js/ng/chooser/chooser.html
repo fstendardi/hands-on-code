@@ -1,50 +1,58 @@
 <div class="sc-chooser-container">
   <div class="sc-chooser-candidates">
-    <div class="input-group sc-chooser-filter" ng-if="vm.filterEnabled">
+    <div class="input-group sc-chooser-filter" ng-if="$ctrl.filterEnabled">
       <input type="text" class="form-control" 
-             name="search" 
-             ng-model="vm.candidatesFilter"
-             ng-model-options="{ debounce: vm.filterTimeout }">
+             ng-model="$ctrl.candidatesFilter"
+             ng-model-options="{ debounce: filterTimeout }">
       <div class="input-group-addon">
         <span class="glyphicon glyphicon-search"></span>
       </div>
     </div>    
     <div class="list-group">
-      <a  href=""      
-          class="list-group-item sc-chooser-item" 
-          ng-repeat="item in vm.items | filter:vm.isCandidate"
-          ng-class="{'active': vm.selectedCandidates[item.id]}"
-          ng-click="vm.candidateClick(item, $event)">             
-        <ng-bind-html ng-if="!vm.itemTemplateUrl" ng-bind-html="vm.renderItem(item)"></ng-bind-html>
-        <ng-include src="vm.itemTemplateUrl"></ng-include>        
+      <a href=""      
+         class="list-group-item sc-chooser-item" 
+         ng-repeat="item in $ctrl.items | filter:$ctrl.isCandidate | filter:$ctrl.candidatesFilter track by item.id"
+         ng-class="{'active': $ctrl.selectedCandidates[item.id]}"
+         ng-click="$ctrl.candidateClick(item, $event)">             
+        <ng-bind-html ng-if="!$ctrl.itemTemplateUrl" 
+                      ng-bind-html="$ctrl.renderItem(item)">
+        </ng-bind-html>
+        <ng-include src="$ctrl.itemTemplateUrl"></ng-include>        
       </a>
     </div>
   </div>
   <div class="sc-chooser-controls">
     <button type="button" 
             class="btn btn-default btn-move-right" 
-            ng-click="vm.chooseSelectedItems()">
+            ng-click="$ctrl.chooseSelectedItems()"
+            ng-disabled="$ctrl.model.length == $ctrl.items.length">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </button>
     <button type="button" 
             class="btn btn-default btn-move-left"
-            ng-click="vm.unchooseSelectedItems()">
+            ng-click="$ctrl.unchooseSelectedItems()"
+            ng-disabled="!$ctrl.model.length">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </button>
     <button type="button" 
             class="btn btn-default btn-move-right-all"
-            ng-click="vm.chooseAllItems()">
+            ng-click="$ctrl.chooseAllItems()"
+            ng-disabled="$ctrl.model.length == $ctrl.items.length">
       <span class="glyphicon glyphicon-fast-forward"></span>
     </button>
     <button type="button" 
             class="btn btn-default btn-move-left-all"
-            ng-click="vm.unchooseAllItems()">
+            ng-click="$ctrl.unchooseAllItems()"
+            ng-disabled="!$ctrl.model.length"
+            >
       <span class="glyphicon glyphicon-fast-backward"></span>
     </button>
   </div>
   <div class="sc-chooser-choices">
-    <div class="input-group sc-chooser-filter" ng-if="vm.filterEnabled">
-      <input type="text" class="form-control" name="search" ng-model="vm.choicesFilter">
+    <div class="input-group sc-chooser-filter" ng-if="$ctrl.filterEnabled">
+      <input type="text" class="form-control" 
+             ng-model="$ctrl.choicesFilter"
+             ng-model-options="{ debounce: filterTimeout }">
       <div class="input-group-addon">
         <span class="glyphicon glyphicon-search"></span>
       </div>
@@ -52,11 +60,14 @@
     <div class="list-group">
       <a href="" 
          class="list-group-item sc-chooser-item" 
-         ng-repeat="item in vm.items | filter:vm.isChosen | orderBy:vm.sortMap[item.id]"
-         ng-class="{'active': vm.selectedChoices[item.id]}"
-         ng-click="vm.choiceClick(item, $event)">
-        <ng-bind-html ng-if="!vm.itemTemplateUrl" ng-bind-html="vm.renderItem(item)"></ng-bind-html>
-        <ng-include src="vm.itemTemplateUrl"></ng-include>
+         ng-repeat="item in $ctrl.items | filter:$ctrl.isChosen | filter:$ctrl.choicesFilter 
+         | orderBy:$ctrl.sortMap[item.id] track by item.id"
+         ng-class="{'active': $ctrl.selectedChoices[item.id]}"
+         ng-click="$ctrl.choiceClick(item, $event)">
+        <ng-bind-html ng-if="!$ctrl.itemTemplateUrl" 
+                      ng-bind-html="$ctrl.renderItem(item)">
+        </ng-bind-html>
+        <ng-include src="$ctrl.itemTemplateUrl"></ng-include>
       </a>
     </div>
   </div>

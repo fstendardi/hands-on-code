@@ -1,42 +1,41 @@
 (function () {
   'use strict';
 
-  myCrmApp.directive('chooser', ChooserDirective);
-
-  function ChooserDirective() {
-    var directive = {
-      bindToController: true,
-      controller: ['$scope', '$parse', '$attrs', ChooserController],
-      controllerAs: 'vm',
-      restrict: 'E',
-      require: '^ngModel',
-      scope: {
-        model: '=ngModel',
-        items: '=',
-        filterEnabled: '@',
-        filterTimeout: '@',
-        itemTemplate: '@',
-        itemTemplateUrl: '@'
-      },
-      templateUrl: '/js/ng/chooser/chooser.html'
-    };
-    return directive;
+ 
+  var chooserConfig = {
+    filterEnabled: true,
+    filterTimeout: 200,
+    itemTemplate: 'item.text'
   }
 
-  function ChooserController($scope, $parse, $attrs) {
+  //component definition
+  var chooserComponent = {
+    controller: ['$scope', '$parse', '$attrs', 'chooserConfig', ChooserController],
+    restrict: 'E',
+    require: '^ngModel',
+    bindings: {
+      model: '=ngModel',
+      items: '=',
+      filterEnabled: '@',
+      filterTimeout: '@',
+      itemTemplate: '@',
+      itemTemplateUrl: '@'
+    },
+    templateUrl: '/js/ng/chooser/chooser.html'
+  };
+
+  //controller constructor
+  function ChooserController($scope, $parse, $attrs, chooserConfig) {
     var self = this;
     this.$scope = $scope;
     this.$parse = $parse;
-    this.candidatesFilter = null;
-    this.choicesFilter = null;
-
-    this.sortMap = {};
+    this.$attrs = $attrs;
+    this.chooserConfig = chooserConfig;
+    this.candidatesFilter = '';
+    this.choicesFilter = '';
+    this.sortMap = {};   //id=>index map used to ensure correct sorting on choices
     this.selectedCandidates = {};
     this.selectedChoices = {};
-
-    this.setDefaults();
-
-    this.initWatches();
 
     this.isCandidate = function (item) {
       return !self.isChosen(item);
@@ -51,9 +50,23 @@
   }
 
   angular.extend(ChooserController.prototype, {
+    
+    $onInit: function () {
+      this.setDefaults();
+      this.initWatches();
+    },
+
+    $postLink: function () {
+      this.$scope.filterTimeout = parseInt(this.$attrs.filterTimeout);
+    },
 
     initWatches: function () {
-      this.$scope.$watchCollection('vm.items', function (newVal) {
+      var self = this;
+
+      //watch items to keep sortMap updated
+      //I didn't set the deepWatch flag because I only need to
+      //know when items count changes
+      this.$scope.$watchCollection('$ctrl.items', function (newVal) {
         self.sortMap = {};
         if (newVal && newVal.length) {
           for (var index in newVal) {
@@ -64,10 +77,13 @@
     },
 
     setDefaults: function () {
-      this.filterEnabled = (angular.isDefined(this.filterEnabled)) ? this.filterEnabled : true;
-      this.filterTimeout = (angular.isDefined(this.filterTimeout)) ? this.filterTimeout : 200;
-      this.itemTemplate = (angular.isDefined(this.itemTemplate)) ? this.itemTemplate : 'item.text';
+      this.filterEnabled = this.getDefaultConfig('filterEnabled');
+      this.filterTimeout = this.getDefaultConfig('filterTimeout');
+      this.itemTemplate = this.getDefaultConfig('itemTemplate');
+    },
 
+    getDefaultConfig: function(name){
+      return (angular.isDefined(this[name])) ? this[name] : this.chooserConfig[name];
     },
 
     isCandidate: function (item) {
@@ -155,14 +171,17 @@
       this.model = [];
     },
 
-    renderItem: function(item){
+    renderItem: function (item) {
       var ctx = {
         item: item
-      };    
+      };
       return this.$parse(this.itemTemplate)(ctx);
-      
+
     }
   });
 
+  myCrmApp.value('chooserConfig', chooserConfig);
+
+  myCrmApp.component('chooser', chooserComponent);
 
 })();

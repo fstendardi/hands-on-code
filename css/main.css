@@ -2,29 +2,9 @@
   margin-bottom: 0px;
 }
 
-.select2-selection__choice .member-avatar{
-  margin: 2px 0px;
-}
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{
-  margin-bottom: 5px;
-}
-
-.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{
-  margin-top: 5px;
-  height: 38px;
-}
-
-.select2-container--bootstrap .select2-selection--single{
-  height: 48px;
-}
-
-.select2-container .select2-selection--single .select2-selection__clear{
-  margin-top: 7px;
-}
-
-.select2-results__option[aria-selected=true] {
-    display: none;
+.sc-chooser-container .member-avatar{
+  border: 1px solid #ccc;
+  padding: 2px;
 }
 
 footer {

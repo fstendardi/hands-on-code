@@ -7,6 +7,12 @@
       "firstName": "Mauro",
       "lastName": "Verdi",
       "avatar": "/assets/images/user.png"
+    },
+    {
+      "id": 6,
+      "firstName": "Maria",
+      "lastName": "Antonietta",
+      "avatar": "/assets/images/avatar-black-widow.png"
     }
   ]
 }
