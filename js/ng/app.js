@@ -1,3 +1,3 @@
-var myCrmApp = angular.module('myCrm', []);
+var myCrmApp = angular.module('myCrm', ['ngSanitize']);
 
 

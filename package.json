@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
     "bootstrap": "^3.3.7",
     "connect": "^3.5.0",
     "jquery": "^1.11.3",
