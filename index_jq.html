@@ -32,37 +32,40 @@
     </div>
     <form action="">
       <fieldset>
-        <legend>General Info</legend>
         <div class="form-group">
           <label for="">Name</label>
           <input name="projectName" type="text" class="form-control" value="My Cute Project">
         </div>
         <div class="form-group">
           <label for="">Description</label>
-          <textarea name="projectDescription" cols="30" rows="5" class="form-control">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus dolor sem, sed blandit diam commodo eget. Nunc eget fermentum arcu. Mauris consequat eros massa, vel auctor lorem rutrum in. Maecenas ac felis vel risus tristique porttitor a ac turpis. Pellentesque magna quam, placerat eget tempus eu, dictum eget libero. Nam molestie est sit amet elit rutrum varius. Curabitur cursus turpis quis est consequat, quis porta elit blandit. Aenean nec dui euismod, posuere nisi eget, gravida dui. Integer eu nunc nec purus consectetur viverra non ut urna. In non lorem fringilla, ornare dui luctus, laoreet augue.
+          <textarea name="projectDescription" cols="30" rows="3" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus dolor sem, sed blandit diam commodo eget. Nunc eget fermentum arcu. Mauris consequat eros massa, vel auctor lorem rutrum in. Maecenas ac felis vel risus tristique porttitor a ac turpis. 
           </textarea>
         </div>
       </fieldset>
       <fieldset>
-        <legend>Team</legend>
         <div class="form-group">
           <label>Members</label>
-          <select name="projectMembers" multiple="multiple" class="form-control">
-              <option value="1" data-avatar="/assets/images/user.png">Mario Rossi</option>
-              <option value="2" 
-                      data-avatar="/assets/images/avatar-hawkeye.png" 
-                      selected="selected">Mauro Verdi
-              </option>
-              <option value="3" 
-                      data-avatar="/assets/images/avatar-iron-man.png">Pietro Neri</option>
-              <option value="4" data-avatar="/assets/images/user.png">Giovanni Bianchi</option>
-              <option value="5" 
-                      data-avatar="/assets/images/avatar-thor.png">Antonio Violetti</option>
-              <option value="6" 
-                      data-avatar="/assets/images/avatar-black-widow.png" 
-                      selected="selected">Maria Antonietta</option>
-          </select>
+          <div class="row">
+            <div class="col-xs-8">
+              <select name="projectMembers" multiple="multiple" class="form-control">
+                <option value="1" 
+                        data-avatar="/assets/images/user.png">Mario Rossi</option>
+                <option value="2" 
+                        data-avatar="/assets/images/avatar-hawkeye.png" 
+                        selected="selected">Mauro Verdi
+                </option>
+                <option value="3" 
+                        data-avatar="/assets/images/avatar-iron-man.png">Pietro Neri</option>
+                <option value="4" 
+                        data-avatar="/assets/images/user.png">Giovanni Bianchi</option>
+                <option value="5" 
+                        data-avatar="/assets/images/avatar-thor.png">Antonio Violetti</option>
+                <option value="6" 
+                        data-avatar="/assets/images/avatar-black-widow.png" 
+                        selected="selected">Maria Antonietta</option>
+              </select>
+            </div>
+          </div>
         </div>
       </fieldset>
       <div class="text-right">

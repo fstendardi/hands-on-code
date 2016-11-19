@@ -1,10 +1,11 @@
-; (function ($) {
+;(function ($) {
   "use strict";
 
-  var pluginName = 'chooser'
-  var classPrefix = 'sf-' + pluginName;
-  var pluginInstance = 'sf-' + pluginName;
-  var dataPrefix = "sf" + pluginName;
+  var pluginNamespace = 'sf',
+      pluginName = 'chooser',
+      cssClassPrefix = pluginNamespace + '-' + pluginName,
+      pluginInstance = pluginNamespace + '-' + pluginName,
+      dataPrefix = pluginNamespace + pluginName;
 
   var defaults = {
     filterEnabled: true,
@@ -14,9 +15,10 @@
     }
   };
 
-  function Chooser(select, options) {
-    this.select = $(select);
-    if (!this.select.is('select') || !this.select.attr('multiple')) {
+  function Chooser(element, options) {
+    this.element = element;
+    this.$element = $(element);
+    if (!this.$element.is('select') || !this.$element.attr('multiple')) {
       throw new Error('Element must be a select[multiple]');
     }
     this.options = $.extend(true, {}, defaults, options);
@@ -26,10 +28,10 @@
   $.extend(Chooser.prototype, {
 
     build: function () {
-      this.select.hide();
-      this.$container = $('<div/>').addClass(classPrefix + '-container')
-                                   .insertAfter(this.select)
-                                   .append(this.select);
+      this.$element.hide();
+      this.$container = $('<div/>').addClass(cssClassPrefix + '-container')
+                                   .insertAfter(this.$element)
+                                   .append(this.$element);
 
       this.buildCandidatesfontainer();
       this.buildControls();
@@ -41,14 +43,14 @@
     },
 
     buildCandidatesfontainer: function () {
-      this.$candidatesfontainer = $('<div/>').addClass(classPrefix + '-candidates')
+      this.$candidatesfontainer = $('<div/>').addClass(cssClassPrefix + '-candidates')
                                             .appendTo(this.$container);      
       this.$candidatesFilter = this.buildFilterControl(this.$candidatesfontainer)
                                    .appendTo(this.$candidatesfontainer);      
     },
 
     buildChoicesfontainer: function () {
-      this.$choicesfontainer = $('<div/>').addClass(classPrefix + '-choices')
+      this.$choicesfontainer = $('<div/>').addClass(cssClassPrefix + '-choices')
                                           .appendTo(this.$container);
       this.$choicesFilter = this.buildFilterControl(this.$choicesfontainer)
                                 .appendTo(this.$choicesfontainer);    
@@ -56,7 +58,7 @@
 
     buildControls: function () {
       var me = this;
-      this.$controls = $('<div/>').addClass(classPrefix + '-controls');
+      this.$controls = $('<div/>').addClass(cssClassPrefix + '-controls');
 
       this.$moveLeftBtn = this.buildMoveBtn('chevron-left', 'left', false);
       this.$moveRightBtn = this.buildMoveBtn('chevron-right', 'right', false);
@@ -71,7 +73,7 @@
     },
 
     refresh: function () {
-      var $options = this.select.find('option');
+      var $options = this.$element.find('option');
       var $unselected = $options.filter(':not(:selected)');
       var $selected = $options.filter(':selected');
       this.refreshItems($unselected, this.$candidatesfontainer, this.$candidatesFilter);
@@ -83,7 +85,7 @@
       var self = this;
       var searchTimeout;
       var $filterContainer =
-        $('<div class="input-group ' + classPrefix + '-filter">'
+        $('<div class="input-group ' + cssClassPrefix + '-filter">'
           + '<input type="text" class="form-control">'
           + '<div class="input-group-addon">'
           + '<span class="glyphicon glyphicon-search"></span>'
@@ -139,10 +141,10 @@
         activeIds[$(item).data(dataPrefix + 'Data').id] = true;
       });
 
-      $container.find('>.' + classPrefix + '-items').remove();
+      $container.find('>.' + cssClassPrefix + '-items').remove();
 
       var $itemsfontainer = $('<div class="list-group"/>').appendTo($container)
-        .addClass(classPrefix + '-items');
+        .addClass(cssClassPrefix + '-items');
 
       var $items = $();
 
@@ -154,7 +156,7 @@
           $option: $option
         };
 
-        var $item = $('<a href="#" class="list-group-item"/>').addClass(classPrefix + '-item')
+        var $item = $('<a href="#" class="list-group-item"/>').addClass(cssClassPrefix + '-item')
           .data(dataPrefix + 'Data', data);
 
         if (data.id in activeIds) {
@@ -215,7 +217,7 @@
     },
 
     getItems: function ($container, active) {
-      return $container.find('.' + classPrefix + '-item' + ((active === true) ? '.active' : ''));
+      return $container.find('.' + cssClassPrefix + '-item' + ((active === true) ? '.active' : ''));
     },
 
     moveItems: function (direction, all) {
@@ -232,12 +234,12 @@
         });
       if (selectedIds.length) {
         if (direction == 'right') {
-          this.select.val((this.select.val() || []).concat(selectedIds));
+          this.$element.val((this.$element.val() || []).concat(selectedIds));
         } else {
-          this.select.find('option[value=' + selectedIds.join('],[value=') + ']')
+          this.$element.find('option[value=' + selectedIds.join('],[value=') + ']')
             .removeAttr('selected')
         }
-        this.select.change();
+        this.$element.change();
         this.refresh();
       }
     },
@@ -261,14 +263,23 @@
     },
 
     destroy: function(){
-      this.select.insertAfter(this.$container).show();
+      this.$element.insertAfter(this.$container).show();
       this.$container.remove();
     }
   });
 
   $.fn[pluginName] = function () {
-    //option getter
-    if (typeof arguments[0] === 'string') {      
+    if (arguments.length === 0 || (typeof arguments[0] !== 'string')){
+      var options = arguments[0];
+      return this.each(function (index, element) {
+        var instance = $(element).data(pluginInstance);
+        if (instance) {
+          instance.destroy();
+        } 
+        instance = new Chooser(element, options);
+        $(element).data(pluginInstance, instance);       
+      });      
+    }else{
       var instance = $(this).data(pluginInstance);
       var method = arguments[0];
       var returnValue = $(this);
@@ -289,20 +300,7 @@
         }
       }
       return returnValue;
-    }     
-    //plugin initialization
-    else {
-      var options = arguments[0];
-      return this.each(function () {
-        var instance = $(this).data(pluginInstance);
-        if (instance) {
-          instance.destroy();
-        } 
-
-        $(this).data(pluginInstance, new Chooser(this, options));       
-      });
     }
-
   };
 
   $.fn[pluginName].defaults = defaults;
