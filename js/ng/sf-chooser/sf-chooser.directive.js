@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
- 
   var chooserConfig = {
     filterEnabled: true,
     filterTimeout: 200,
@@ -10,18 +9,18 @@
 
   //component definition
   var chooserComponent = {
-    controller: ['$scope', '$parse', '$attrs', 'chooserConfig', ChooserController],
+    controller: ['$scope', '$parse', '$attrs', 'scChooserConfig', ChooserController],
     restrict: 'E',
     require: '^ngModel',
     bindings: {
       model: '=ngModel',
-      items: '=',
+      items: '<',
       filterEnabled: '@',
       filterTimeout: '@',
       itemTemplate: '@',
       itemTemplateUrl: '@'
     },
-    templateUrl: '/js/ng/chooser/chooser.html'
+    templateUrl: '/js/ng/sf-chooser/sf-chooser.html'
   };
 
   //controller constructor
@@ -33,18 +32,13 @@
     this.chooserConfig = chooserConfig;
     this.candidatesFilter = '';
     this.choicesFilter = '';
-    this.sortMap = {};   //id=>index map used to ensure correct sorting on choices
+    this.itemIndexMap = {};   //id=>index map used to ensure correct sorting on choices
+    this.itemMap = {};
     this.selectedCandidates = {};
     this.selectedChoices = {};
 
-    this.isCandidate = function (item) {
-      return !self.isChosen(item);
-    }
-
-    this.isChosen = function (item) {
-      return !!(self.model || []).find(function (em) {
-        return em.id == item.id;
-      });
+    this.itemOrderBy = function(item){
+      return self.itemIndexMap[item.id];
     }
 
   }
@@ -53,27 +47,34 @@
     
     $onInit: function () {
       this.setDefaults();
-      this.initWatches();
     },
 
     $postLink: function () {
+      //needed because of limitations of ng-model-options
       this.$scope.filterTimeout = parseInt(this.$attrs.filterTimeout);
     },
 
-    initWatches: function () {
-      var self = this;
-
-      //watch items to keep sortMap updated
-      //I didn't set the deepWatch flag because I only need to
-      //know when items count changes
-      this.$scope.$watchCollection('$ctrl.items', function (newVal) {
-        self.sortMap = {};
-        if (newVal && newVal.length) {
-          for (var index in newVal) {
-            self.sortMap[newVal[index].id] = index;
+    $onChanges: function(changesObj){
+      if (changesObj.items.currentValue){
+        this.itemMap = {};
+        this.itemIndexMap = {};
+        var curVal = changesObj.items.currentValue;
+        if (curVal && curVal.length) {
+          //update sort map with new indexes and item map by id
+          for (var index in curVal) {
+            this.itemIndexMap[curVal[index].id] = index;
+            this.itemMap[curVal[index].id] = curVal[index];
+          }
+          if (this.model){
+            //remove no more existing items from model
+            for(var i = this.model.length -1; i >= 0 ; i--){
+                if(!this.itemIndexMap[this.model[i].id]){
+                    this.model.splice(i, 1);
+                }
+            }
           }
         }
-      });
+      }
     },
 
     setDefaults: function () {
@@ -97,51 +98,61 @@
     },
 
     candidateClick: function (item, e) {
-      this.itemClick(item, e, this.selectedCandidates);
+      this.handleItemClick(item, e, this.selectedCandidates, this.getCandidates());
     },
 
     choiceClick: function (item, e) {
-      this.itemClick(item, e, this.selectedChoices);
+      this.handleItemClick(item, e, this.selectedChoices, this.model);
     },
 
-    itemClick: function (item, e, selectedMap) {
+    handleItemClick: function (item, e, selectedItems, items) {
       if (e.ctrlKey) {
-        selectedMap[item.id] = !selectedMap[item.id];
+        selectedItems[item.id] = !selectedItems[item.id];
       }
       else if (e.shiftKey) {
-        var index = this.getItemIndexById(item.id);
-        var firstSelectedIndex = this.items.map(function (item, index) {
-          if (selectedMap[item.id]) {
+        var index = items.findIndex(function(i){ return i === item});
+        var selectedIndexes = items.map(function (item, index) {
+          if (selectedItems[item.id]) {
             return index;
           }
           return -1;
         })
-          .filter(function (index) {
-            return index >= 0;
-          })
-          .sort()[0];
+        .filter(function (i) {
+          return i >= 0 && i !== index;
+        })
+        .sort();
 
-        var sortedIndexes = [index, firstSelectedIndex].sort();
+        var lastSelectedIndex = selectedIndexes[selectedIndexes.length - 1];
 
-        this.items.slice(sortedIndexes[0], sortedIndexes[1] + 1).forEach(function (item) {
-          selectedMap[item.id] = true;
+        var interval;
+        if (lastSelectedIndex < index){
+          interval = [lastSelectedIndex, index];
+        }else{
+          interval = [index, selectedIndexes[0]];
+        }
+        for (var id in selectedItems) delete selectedItems[id];
+        items.slice(interval[0], interval[1] + 1).forEach(function (item) {
+          selectedItems[item.id] = true;
         });
 
       } else {
-        for (var id in selectedMap) delete selectedMap[id];
-        selectedMap[item.id] = true;
+        for (var id in selectedItems) delete selectedItems[id];
+        selectedItems[item.id] = true;
       }
     },
 
     getItemById: function (id) {
-      return this.items.find(function (em) {
-        return em.id == id;
-      });
+      return this.itemMap[id];
     },
 
     getItemIndexById: function (id) {
-      return this.items.findIndex(function (em) {
-        return em.id == id;
+      return this.itemIndexMap[id];
+    },
+
+    getCandidates: function(){
+      var self = this;
+      return this.items.filter(function(item){
+        return self.isCandidate(item);  
       });
     },
 
@@ -180,8 +191,8 @@
     }
   });
 
-  myCrmApp.value('chooserConfig', chooserConfig);
+  myCrmApp.value('scChooserConfig', chooserConfig);
 
-  myCrmApp.component('chooser', chooserComponent);
+  myCrmApp.component('sfChooser', chooserComponent);
 
 })();

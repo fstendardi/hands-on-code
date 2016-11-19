@@ -32,5 +32,9 @@
         return member;
       });
     });
+
+    this.removeMember = function(){
+      this.members.splice(5,1);
+    }
   }
 })();

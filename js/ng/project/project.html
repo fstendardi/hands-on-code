@@ -20,12 +20,12 @@
     <div class="form-group">
       <label>Members</label>
 
-      <chooser ng-model="vm.project.members" 
+      <sf-chooser ng-model="vm.project.members" 
                items="vm.members"
                filter-enabled="true"
                filter-timeout="500"
                item-template="'<img src=\'' + item.avatar + '\'> ' + item.firstName + ' ' + item.lastName"
-               item-template-url="/js/ng/project/chooser-item.html"></chooser>
+               item-template-url="/js/ng/project/chooser-item.html"></sf-chooser>
 
     </div>
   </fieldset>
