@@ -10,8 +10,7 @@
 
   //component definition
   var chooserComponent = {
-    controller: ['$scope', '$parse', '$attrs', 'scChooserConfig', ChooserController],
-    restrict: 'E',
+    controller: ['$scope', '$parse', '$attrs', '$sce', 'sfChooserConfig', ChooserController],
     require: '^ngModel',
     bindings: {
       model: '=ngModel',
@@ -19,18 +18,19 @@
       filterEnabled: '@',
       filterTimeout: '@',
       filterMinLength: '@',
-      itemTemplate: '@',
+      itemTemplate: '@', //inline template
       itemTemplateUrl: '@'
     },
     templateUrl: '/js/ng/sf-chooser/sf-chooser.html'
   };
 
   //controller constructor
-  function ChooserController($scope, $parse, $attrs, chooserConfig) {
+  function ChooserController($scope, $parse, $attrs, $sce, chooserConfig) {
     var self = this;
     this.$scope = $scope;
     this.$parse = $parse;
     this.$attrs = $attrs;
+    this.$sce = $sce;
     this.chooserConfig = chooserConfig;
     this.candidatesFilter = '';
     this.choicesFilter = '';
@@ -189,12 +189,12 @@
       var ctx = {
         item: item
       };
-      return this.$parse(this.itemTemplate)(ctx);
+      return this.$sce.trustAsHtml(this.$parse(this.itemTemplate)(ctx));
 
     }
   });
 
-  myCrmApp.value('scChooserConfig', chooserConfig);
+  myCrmApp.value('sfChooserConfig', chooserConfig);
 
   myCrmApp.component('sfChooser', chooserComponent);
 
