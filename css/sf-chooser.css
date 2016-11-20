@@ -1,50 +1,50 @@
-.sf-chooser-container{
+.sfchooser-container{
   overflow: auto;
 }
 
-.sf-chooser-container .sf-chooser-items{
+.sfchooser-container .sfchooser-items{
   margin-bottom: 0px;
 }
 
-.sf-chooser-candidates,
-.sf-chooser-controls,
-.sf-chooser-choices{
+.sfchooser-candidates,
+.sfchooser-controls,
+.sfchooser-choices{
   float: left;
 }
 
-.sf-chooser-candidates,
-.sf-chooser-choices{
+.sfchooser-candidates,
+.sfchooser-choices{
   width: 45%;
   border: 1px solid #ccc;
 }
 
-.sf-chooser-candidates .sf-chooser-items,
-.sf-chooser-choices .sf-chooser-items{
+.sfchooser-candidates .sfchooser-items,
+.sfchooser-choices .sfchooser-items{
   height: 250px;
   overflow-y: auto;
 }
 
-.sf-chooser-controls{
+.sfchooser-controls{
   width: 10%;
   
 }
 
-.sf-chooser-item.list-group-item{
+.sfchooser-item.list-group-item{
   border: 0px;
   padding: 5px 10px;
   border-radius: 0px;
 }
 
-.sf-chooser-controls .btn{
+.sfchooser-controls .btn{
   display: block;
   margin: 0 auto;
   margin-top: 20px;
 }
 
-.sf-chooser-controls .btn:first-child{
+.sfchooser-controls .btn:first-child{
   margin-top: 0px;
 }
 
-.sf-chooser-filter{
+.sfchooser-filter{
   padding: 10px;
 }

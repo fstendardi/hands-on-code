@@ -4,6 +4,7 @@
   var chooserConfig = {
     filterEnabled: true,
     filterTimeout: 200,
+    filterMinLength: 3,
     itemTemplate: 'item.text'
   }
 
@@ -17,6 +18,7 @@
       items: '<',
       filterEnabled: '@',
       filterTimeout: '@',
+      filterMinLength: '@',
       itemTemplate: '@',
       itemTemplateUrl: '@'
     },
@@ -80,6 +82,7 @@
     setDefaults: function () {
       this.filterEnabled = this.getDefaultConfig('filterEnabled');
       this.filterTimeout = this.getDefaultConfig('filterTimeout');
+      this.filterMinLength = this.getDefaultConfig('filterMinLength');
       this.itemTemplate = this.getDefaultConfig('itemTemplate');
     },
 

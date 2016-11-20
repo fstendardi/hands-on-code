@@ -1,0 +1,853 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"bs3-gly",
+				"bs3-icon:glyphicon\tbs3-icon-glyphicon"
+			],
+			[
+				"bs3-input-",
+				"bs3-input-group-addon\tbs3-input-group-addon"
+			],
+			[
+				"defa",
+				"getDefaultInstance"
+			],
+			[
+				"Cod",
+				"CodiceValutazione"
+			],
+			[
+				"JAVA_",
+				"JAVA_OPTS"
+			],
+			[
+				"theme",
+				"themeDisplay.getURLMyAccount"
+			],
+			[
+				"CATE",
+				"CATEGORY_EVO"
+			],
+			[
+				"sc_is",
+				"sc_isEmptyValue"
+			],
+			[
+				"logout",
+				"logoutUrl"
+			],
+			[
+				"is",
+				"isWidget\tlogin.jsp"
+			],
+			[
+				"java",
+				"javascript"
+			],
+			[
+				"getName",
+				"getNamespace\t(view_flat_users.jspf)"
+			],
+			[
+				"getUrl",
+				"getURLCurrent"
+			],
+			[
+				"direzione",
+				"direzione_commerciale_new\t(liferay.2016-04-11.log)"
+			],
+			[
+				"change",
+				"changePasswordUrl"
+			],
+			[
+				"sub",
+				"submit"
+			],
+			[
+				"changePwd",
+				"changePwdBtn"
+			],
+			[
+				"showC",
+				"showChangePwdBox"
+			],
+			[
+				"jaav",
+				"javascript"
+			],
+			[
+				"isu",
+				"isAuthException"
+			],
+			[
+				"cart",
+				"cartItemId"
+			],
+			[
+				"placeholde",
+				"placeholder4"
+			],
+			[
+				"bs3",
+				"bs3-col\tbs3-col"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 262.0,
+		"last_filter": "javas",
+		"selected_items":
+		[
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"rever",
+				"File: Revert"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"javasci",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"j",
+				"Set Syntax: Java"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"XML",
+				"Set Syntax: XML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"revert",
+				"File: Revert"
+			],
+			[
+				"c#",
+				"Set Syntax: C#"
+			],
+			[
+				"lowe",
+				"Convert Case: Lower Case"
+			],
+			[
+				"prett",
+				"HTMLPrettify: Set Plugin Options"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"jav",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"JSON",
+				"Set Syntax: JSON"
+			],
+			[
+				"jsp",
+				"Set Syntax: Java Server Page (JSP)"
+			],
+			[
+				"xm",
+				"Set Syntax: XML"
+			],
+			[
+				"SQL",
+				"Set Syntax: SQL"
+			],
+			[
+				"jv",
+				"Set Syntax: Java"
+			],
+			[
+				"plai",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"diff",
+				"Diffy Compare"
+			],
+			[
+				"scroll",
+				"SyncScroll: Toggle Current View Scroll Sync"
+			],
+			[
+				"sync",
+				"SyncScroll: Toggle Current View Scroll Sync"
+			],
+			[
+				"syncs",
+				"SyncScroll: Toggle Current View Scroll Sync"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"javsc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"linr",
+				"CSSLint: Run CSSLint"
+			],
+			[
+				"JSL",
+				"JSLint"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"re",
+				"File: Revert"
+			],
+			[
+				"rev",
+				"File: Revert"
+			],
+			[
+				"proper",
+				"Set Syntax: Java Properties"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"JAVA",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"sq",
+				"Set Syntax: SQL"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"encod",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"prefenre",
+				"Preferences: Settings - Default"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 440.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/f.stendardi/Downloads/PDCHKAUI (4).pcml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/fz3temp-2/dwr.xml",
+		"/C/Users/f.stendardi/Desktop/1ms_mails/mail conferma amico.html",
+		"/C/Users/f.stendardi/Desktop/1ms_mails/mail per l'utente.html",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/build-common-plugin.xml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/compass-lib/it.compass/pcmls/PDCHKAUI.pcml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/fz3temp-2/v20161110.0.md5",
+		"/C/Users/f.stendardi/Downloads/manutenzione_futuro.csv",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/compass-lib/it.compass/src/it/compass/as400/gen/pdchkaus/PDCHKAUI.pcml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/dist/scfuturo-portlet-6.2.0.1.war.bn",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/logs/liferay.2016-10-31.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/compass-lib/it.compass/pcmls/PDLSUTEI.pcml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/HandsOnCode-/js/main.js",
+		"/C/Users/f.stendardi/Desktop/liferay.2016-11-11.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Sintra/1MinuteSite/1minutesite/webchanger/web/WEB-INF/templates/email_payment/it/email_renewed_bonifico.html",
+		"/C/Users/f.stendardi/AppData/Local/Temp/fz3temp-2/scfuturo-portlet-6.2.0.1.war.md5",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/dist/scfuturo-portlet-6.2.0.1.war.md5",
+		"/C/Users/f.stendardi/Desktop/InstallCert.java",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/tomcat-7.0.42/webapps/ROOT/html/portlet/login/login.jsp",
+		"/C/Users/f.stendardi/AppData/Local/Temp/fz3temp-2/v20161109.0.md5",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO8F1B7C76/MANIFEST.MF",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO495C7C85/MANIFEST.MF",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO054A9E84/MANIFEST.MF",
+		"/C/Users/f.stendardi/Desktop/abilitazioni_utenze_20161103.csv",
+		"/C/Users/f.stendardi/Desktop/Tracciato CRM Orfani_Campagna rinnovi gen-mag 2016 (1).csv",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/dist/scfuturoportal-theme-6.2.0.1.war.md5",
+		"/C/Users/f.stendardi/AppData/Local/Temp/fz3temp-2/abilitazioni_utenze_20161027.csv",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/futuro-portal/tomcat-7.0.42/temp/269599250632463425.tmp",
+		"/C/Users/f.stendardi/AppData/Local/Temp/EmailUtils.java-revHEAD.svn000.tmp.java",
+		"/C/Users/f.stendardi/AppData/Local/Temp/FuturoConfigKeys.java-revHEAD.svn000.tmp.java",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/build.properties",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/tomcat-7.0.42/webapps/ROOT/WEB-INF/web.xml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/tomcat-7.0.42/webapps/ROOT/WEB-INF/jboss-web.xml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/portlets/sccompass-portlet/docroot/WEB-INF/sql/sc_updates/sc_custom.sql",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/portlets/sccompass-portlet/docroot/WEB-INF/sql/sc_custom.sql",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/portlets/sccompass-portlet/docroot/html/scstart/view22.jsp",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/portlets/sccompass-portlet/docroot/html/scstart/view.jsp",
+		"/C/tmp/arubapec.importtools/SinCRO_55c9d93afb9a951a846e11b6.tsd7342438394401454611.tmp",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/futuro-portal/tomcat-7.0.42/webapps/ROOT/WEB-INF/web.xml",
+		"/C/Users/f.stendardi/Downloads/IPDV-template-5154__FATT_ATT_02.xml",
+		"/C/tmp/arubapec.importtools/gme/output/PDA-45-06208031002_7_6/IPDV-56bc961dfb9a9512785c6b5e.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-TA8E1F155737496BAD90B95C453D74A679FEAE3D9BD10482FFF5A244F3C441E8B/IPDV-a279ae0f-3a38-4fc0-a0d9-0390970f6ea5.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/indexPdD.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/arubapec.importool/gme/output/PDA-75327656700764850975/IPDV-75327656700764850975.xml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/logs/liferay.2016-10-20.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/tomcat-7.0.42/logs/catalina.2016-10-20.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/logs/liferay.2016-10-19.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/futuro-portal/logs/liferay.2016-10-10.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/portal-ide.properties",
+		"/C/Users/f.stendardi/Downloads/PDLSUTEI (2).pcml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/compass-portal/logs/liferay.2016-10-18.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/compass-lib/it.compass/pcmls/PDCHKINI.pcml",
+		"/C/Users/f.stendardi/Downloads/PDCHKAUI (2).pcml",
+		"/C/Users/f.stendardi/Downloads/PDCHKINI (2).pcml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/ari/liferay-project/compass-lib/it.compass/src/it/compass/as400/gen/pdchkins/PDCHKINI.pcml",
+		"/C/Users/f.stendardi/Downloads/Abilitazioni utenze 20161019.csv",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-T1BC2D35E4C2A0302654A43EDE92E5D43F4AB0CA9DB764397B15D09646A204AAA/IPDV-009e569e-e2d7-4e6e-a9e6-6cdc6f9fbd9d.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO86B42F63/index.xml",
+		"/C/Users/f.stendardi/Downloads/gse_esempio_classe_documentale_token.csv",
+		"/C/Users/f.stendardi/Desktop/VIRALITY/viral_page.html",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Sintra/1MinuteSite/1minutesite/webchanger/web/tiles/protected/main_contents/viral.jsp",
+		"/C/Users/f.stendardi/Desktop/VIRALITY/css/style.css",
+		"/C/tmp/arubapec.importtools/work/SinCRO_5683e827fb9a9514f8689dac.tsd8627384261677416656.tmp",
+		"/C/tmp/arubapec.importtools/work/indexPdD.xml.p7m1746387388893114201.tmp",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO449CEF17/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO0B6F8051/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO0B66AD75/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC51A0651/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO0B6AC466/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO0B6D7D66/conserve.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-T93D352C45E245CB71486620CFBB893AA16403FD43A7BABE23CCB9CA134B66E53/IPDV-1c51268b-6ef5-4ede-9dd4-eb1700c028c2.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO8821B1C7/index.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-T54E001A9D324855A8AA504332E6A84DF1FB519203C12AF1F89C12A8B3C47F5B3/IPDV-5d1360b6-57bd-4149-8976-dfd321d9ea64.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-T54E001A9D324855A8AA504332E6A84DF1FB519203C12AF1F89C12A8B3C47F5B3/IPDV-ef4e42bc-3a08-4aa8-91e8-b2e336054d0a.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/IT05754381001_01J4T_42253923.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO833D08F1/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC5EFEC2A/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC269CED0/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO873BD797/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/T54E001A9D324855A8AA504332E6A84DF1FB519203C12AF1F89C12A8B3C47F5B3.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC269C0C0/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO897E1A89/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO85394DF5/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC6128682/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO4927E135/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/T1BC2D35E4C2A0302654A43EDE92E5D43F4AB0CA9DB764397B15D09646A204AAA.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO4B0F7CB5/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO4926ED75/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC6114BF2/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO4F9FD38C/index.xml",
+		"/C/Users/FE962~1.STE/AppData/Local/Temp/7zE4F9EAC6B/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO47200CC2/index.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO8402912C/conserve.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-d803067a-aeb9-4209-985e-1ca7104ba48b/IPDV-d803067a-aeb9-4209-985e-1ca7104ba48b.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-70d8d7a6-b014-4e42-a0cd-796c0e3f3b38/IPDV-70d8d7a6-b014-4e42-a0cd-796c0e3f3b38.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-763b5479-2c35-426d-b131-11588bfcd680/IPDV-763b5479-2c35-426d-b131-11588bfcd680.xml",
+		"/C/tmp/arubapec.importtools/gme/output/PDA-45-06208031002_7_1/IPDV-56bc42f5fb9a9512785c6653.xml",
+		"/C/tmp/arubapec.importtools/gse/output/PDA-3d4acc77-9831-4a53-b8d2-c793ec4da2c3/IPDV-3d4acc77-9831-4a53-b8d2-c793ec4da2c3.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO8374114B/conserve.xml",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO47266361/conserve.xml",
+		"/C/tmp/arubapec.importtools/work/SinCRO_5683e826fb9a9514f8689da7.xml",
+		"/C/tmp/arubapec.importtools/gme/output/PDA-45-06208031002_7_115/IPDV-56bc5aa0fb9a9512785c69e3.xml",
+		"/C/tmp/SinCRO_55c9d93afb9a951a846e11b6",
+		"/C/tmp/arubapec.importtools/work/SinCRO_56810670fb9a951c4c5f548e.tsd1428273145031042956.tmp",
+		"/C/tmp/arubapec.importtools/work/SinCRO_54dbb674fb9a950410afb822.tsd7180670768609182075.tmp",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO02643568/variables.less",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO02645078/build.less",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO026460E8/bootstrap-switch.less",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO02623988/bootstrap-switch.less",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/development/portlets/scfuturo-portlet/docroot/WEB-INF/src/custom-sql/batch.xml",
+		"/C/Program Files (x86)/Atlassian/SourceTree/SourceTree.exe.config",
+		"/C/Program Files (x86)/WinMerge/Docs/ReleaseNotes.html",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/futuro-portal/tomcat-7.0.42/webapps/ROOT/WEB-INF/classes/META-INF/portal-log4j-ext.xml",
+		"/C/Users/f.stendardi/Documents/Sviluppo/servers/futuro-portal/portal-setup-wizard.properties",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/development/portlets/scfuturo-portlet/docroot/WEB-INF/src/sc/futuro/hooks/FuturoAuthenticator.java",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/development/portlets/scfuturo-portlet/docroot/WEB-INF/src/sc/futuro/hooks/FuturoLoginPreAction.java",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/development/portlets/scfuturo-portlet/docroot/WEB-INF/src/sc/futuro/portlets/ScStartPortlet.java",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/development/portlets/scfuturo-portlet/docroot/WEB-INF/src/sc/futuro/portlets/SimulazioneFinanziariaNewPortlet.java",
+		"/C/WINDOWS/system32/http",
+		"/C/ProgramData/eclipse-luna/eclipse.ini",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO0F002C3A/liferay.2016-09-23.log",
+		"/C/Users/f.stendardi/Documents/Sviluppo/Compass/futuro_crm/lif_futuro/portlets/scfuturo-portlet/docroot/WEB-INF/src/META-INF/dbchanges/1609051149_ct_sc_fu_incident_exl_credit.sql",
+		"/C/Users/f.stendardi/Documents/MobaXterm/slash/RemoteFiles/0/cues430@cmpleapas01/liferay.2016-10-06.log",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zO874D84CF/CQCSFCEXD.txt",
+		"/C/Users/f.stendardi/AppData/Local/Temp/7zOC9AA8998/CQCSFCEXD.txt",
+		"/C/Users/f.stendardi/Downloads/PDCHKAUI.pcml",
+		"/C/tmp/arubapec.importtools/SinCRO_54a36d6cfb9a950a6c36574e.tsd8158876438345006502.tmp",
+		"/C/tmp/arubapec.importtools/SinCRO_54a36db8fb9a950a6c3686f0.tsd8067296206664555964.tmp"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			" = fun",
+			"Chooser.prototype.",
+			" = func",
+			"this\\.([^ ]*) = function",
+			"this\\\\.(.*) = function",
+			" : function",
+			"-",
+			"LINK_CATEGORY_IUD",
+			"_",
+			"nu08",
+			"','",
+			"\\n",
+			"0.05",
+			"gallery",
+			"gallery_ttil",
+			"gallery_tti",
+			"@Column\\(name = \"(.+)\"\\)",
+			"Date",
+			"String",
+			"private",
+			"app.server.lib.portal.dir",
+			"RIPROPONIBILE CF",
+			"Recent opportunity found",
+			"processing ban",
+			"batchRespinteCompass",
+			"PROCESSING BANK ",
+			"bad",
+			"400",
+			"Login",
+			"Auto",
+			"_scdealerswitch_",
+			"necessit",
+			"é",
+			"è",
+			"compassdev",
+			".getValue()",
+			"))",
+			"(de",
+			".trim()",
+			"-",
+			"ListHelper",
+			".AddIf(items, Defaults.getCachedRoleByName(\"",
+			"using:",
+			"Sito:",
+			"sito:",
+			"scmyfiles",
+			"314__Info_",
+			"Fattura_passiva_FEPA",
+			"FATTGME_64654cb7-5990-4675-972c-dab9a80e5fa4_635870845433086427",
+			"FATT_PASS_01",
+			"</value>",
+			"@ph_",
+			"_02",
+			"CreateRequestDataUtil.add_activity",
+			"CreateRequestDataUtil.add_opportunity",
+			"Chiamata ASSICAXAAssumibile in errore",
+			"denom_amm",
+			"processing bank",
+			"netguard-test.aruba.it",
+			"BRTLNZ40P03H034W",
+			"\\n",
+			"\\n\n",
+			"','",
+			"<IdDoc/>",
+			"<IdDoc />",
+			"<IdDoc>",
+			"14.363.55354024.eml",
+			"15\n",
+			"15.128.5917\n",
+			"15.128.59177513-MI15.128.59177560\t\n",
+			"14.363.55354024",
+			"15.107.57066857-",
+			"14.363.5535402",
+			"14.363.55354024",
+			"NU0240",
+			"nu0240",
+			"regular",
+			"BANFIL",
+			"banfil",
+			"autunno",
+			"agosto",
+			"sso",
+			"webservices",
+			"soap",
+			"<option value=\"(.*)\">",
+			"</option>",
+			":(.*)",
+			"Att_20150803_13149000153_0200012521",
+			"Att_20150803_13149000153_0200012521.pdf",
+			"C:\\temp\\Aruba",
+			"rfc",
+			"Att_20150803_07305361003_0200012816.pdf",
+			"Att_20150803_US133092284_0200012663",
+			"\\",
+			"</value>",
+			"@ph_",
+			"Att_20150803_02924550920_0200012886",
+			"FATTGME_5e66b751-dc58-4e9a-8124-e4f9e4d19d81_635748852973403804",
+			"FileGruppo>",
+			"FileGruppo",
+			"fatt",
+			"FEPA",
+			"FATT_",
+			"FATT",
+			"fatt",
+			"FlyerGenerator] *",
+			"*{",
+			"FlyerGenerator",
+			"*{",
+			"gestione",
+			"pratice",
+			"lazzerini",
+			"ph_partitaiva_dest",
+			"fake_",
+			",\"",
+			"=",
+			"\",\"",
+			"^@ph_",
+			"sezionale",
+			"317",
+			"mappin",
+			"mapping",
+			"bot found",
+			"50853",
+			"23256",
+			"Processing activity 23256",
+			" Processing activity 23256",
+			" mapping not found"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			": fun",
+			",\\n",
+			" : func",
+			"$0 : function",
+			"$0 = function",
+			"_",
+			" ",
+			"',\\n'",
+			"','",
+			"",
+			"private Date",
+			"private String",
+			"@Column(name = \"authorizationcode\") \\n",
+			"${portletDisplay.namespace}",
+			"",
+			")))",
+			"(getString(de",
+			"",
+			"_",
+			"",
+			"Fattura_attiva_FEPA",
+			"FATT_PASS_05",
+			"}</value>",
+			"${",
+			"_04",
+			"','",
+			"login_notices",
+			"",
+			"C:\\_LogErrori\\NetGuard.Web",
+			"C:\\_LogErrori\\Aruba.NetGuard.API",
+			"\\\\",
+			"}</value>",
+			"${",
+			",\"fake_",
+			"\",\"",
+			"=",
+			" ",
+			"",
+			"','",
+			"one2one_seq.NEXTVAL);",
+			"one2one_seq.NEXTVAL",
+			"",
+			"$1Repository = new $1Repository();",
+			"",
+			"this.",
+			"$1Repository $1Repository",
+			"$1",
+			"{get; set;}",
+			"crmfuturo-col.int.compassonline.it",
+			"href=\"https://sviluppo.futuro-spa.com/",
+			"src=\"https://sviluppo.futuro-spa.com/",
+			"\"https://sviluppo.futuro-spa.com/",
+			"','",
+			"BANCA 2",
+			"BANCA 1",
+			"",
+			"\\n",
+			"new SearchFilter({ type: SearchFilter.TYPE_DOMAIN,",
+			"'In'",
+			"searchClause: {\n                            FieldName: '${1}',\n                            Comparator: 'Eq'\n                        }",
+			"searchClause: {\n                            FieldName: '${0}',\n                            Comparator: 'Eq'\n                        }",
+			"a",
+			"$0",
+			"','",
+			"_id` || '' AS `value`",
+			"this.container.",
+			"},",
+			"",
+			",",
+			"{",
+			"_",
+			";",
+			"Source.",
+			"Dto",
+			"Source",
+			"Dto.",
+			";",
+			"','",
+			".Dispose();",
+			"",
+			"_",
+			",",
+			"','",
+			" ','",
+			" ,",
+			"",
+			";\\ndeny ",
+			";deny ",
+			"deny",
+			";\\n",
+			"deny",
+			"http://",
+			",options.isComparatorTrovaprezziEnabled(), options);",
+			"options.isComparatorTrovaprezziEnabled(), options);",
+			"\\nsave(OPTIONS.",
+			"$",
+			"",
+			"save(",
+			",\\n",
+			"PRATICHE_160303",
+			"cartItem",
+			"{datacut_subagent_id} = 0",
+			"{datacut_bank_id} = 0",
+			"{datacut_agent_id} = 0",
+			"','",
+			"dwr:",
+			"\n",
+			"=",
+			"",
+			"<td class=\"",
+			"</td>",
+			",0)",
+			"COALESCE(",
+			",a.",
+			"",
+			"a.",
+			"a.\n",
+			"\n",
+			"TIMESTAMP_DIFF",
+			"SEC_TO_TIME",
+			"IN_PREVIOUS_MONTH",
+			"GET_FIXED_DATE_AH",
+			"GET_EASTER",
+			"GET_CONFIG",
+			"DAYOFWEEK",
+			"CHECK_DATE",
+			" ",
+			"Retry"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "server.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"host",
+				"C:\\Windows\\System32\\drivers\\etc\\hosts"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\f.stendardi\\Documents\\Sublime\\cup3.fe-project.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 35.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 157.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

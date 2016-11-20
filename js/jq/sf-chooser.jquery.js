@@ -2,62 +2,62 @@
   "use strict";
 
   var pluginNamespace = 'sf',
-      pluginName = 'chooser',
-      cssClassPrefix = pluginNamespace + '-' + pluginName,
-      pluginInstance = pluginNamespace + '-' + pluginName,
-      dataPrefix = pluginNamespace + pluginName;
+      pluginName = pluginNamespace + 'chooser',
+      cssClassPrefix = pluginName,
+      pluginInstance = pluginName,
+      dataPrefix = pluginName;
 
   var defaults = {
     filterEnabled: true,
     filterTimeout: 200,
+    filterMinLength: 3,
     itemTemplate: function ($item, data) {
       return data.text;
     }
   };
 
-  function Chooser(element, options) {
-    this.element = element;
-    this.$element = $(element);
-    if (!this.$element.is('select') || !this.$element.attr('multiple')) {
-      throw new Error('Element must be a select[multiple]');
-    }
-    this.options = $.extend(true, {}, defaults, options);
-    this.build();
+function Chooser(element, options) {
+  this.element = element;
+  this.$element = $(element);
+  if (!this.$element.is('select') || !this.$element.attr('multiple')) {
+    throw new Error('Element must be a select[multiple]');
   }
+  this.options = $.extend(true, {}, defaults, options);
+  this.build();
+}
 
   $.extend(Chooser.prototype, {
 
     build: function () {
       this.$element.hide();
       this.$container = $('<div/>').addClass(cssClassPrefix + '-container')
-                                   .insertAfter(this.$element)
-                                   .append(this.$element);
+                                   .insertAfter(this.$element);
 
-      this.buildCandidatesfontainer();
+      this.buildCandidates();
       this.buildControls();
-      this.buildChoicesfontainer();
-
+      this.buildChoices();
+      
       this.setOption('filterEnabled', this.options.filterEnabled);
       
       this.refresh();
     },
 
-    buildCandidatesfontainer: function () {
-      this.$candidatesfontainer = $('<div/>').addClass(cssClassPrefix + '-candidates')
-                                            .appendTo(this.$container);      
-      this.$candidatesFilter = this.buildFilterControl(this.$candidatesfontainer)
-                                   .appendTo(this.$candidatesfontainer);      
+    buildCandidates: function () {
+      this.$candidatesContainer = $('<div/>').addClass(cssClassPrefix + '-candidates')
+                                             .appendTo(this.$container);      
+      this.$candidatesFilter = this.buildFilterControl(this.$candidatesContainer)
+                                   .appendTo(this.$candidatesContainer);      
     },
 
-    buildChoicesfontainer: function () {
-      this.$choicesfontainer = $('<div/>').addClass(cssClassPrefix + '-choices')
+    buildChoices: function () {
+      this.$choicesContainer = $('<div/>').addClass(cssClassPrefix + '-choices')
                                           .appendTo(this.$container);
-      this.$choicesFilter = this.buildFilterControl(this.$choicesfontainer)
-                                .appendTo(this.$choicesfontainer);    
+      this.$choicesFilter = this.buildFilterControl(this.$choicesContainer)
+                                .appendTo(this.$choicesContainer);    
     },
 
     buildControls: function () {
-      var me = this;
+      var self= this;
       this.$controls = $('<div/>').addClass(cssClassPrefix + '-controls');
 
       this.$moveLeftBtn = this.buildMoveBtn('chevron-left', 'left', false);
@@ -76,14 +76,13 @@
       var $options = this.$element.find('option');
       var $unselected = $options.filter(':not(:selected)');
       var $selected = $options.filter(':selected');
-      this.refreshItems($unselected, this.$candidatesfontainer, this.$candidatesFilter);
-      this.refreshItems($selected, this.$choicesfontainer, this.$choicesFilter);
+      this.refreshItems($unselected, this.$candidatesContainer, this.$candidatesFilter);
+      this.refreshItems($selected, this.$choicesContainer, this.$choicesFilter);
       this.refreshControls();
     },
 
-    buildFilterControl: function ($itemsfontainer) {
+    buildFilterControl: function ($itemsContainer) {
       var self = this;
-      var searchTimeout;
       var $filterContainer =
         $('<div class="input-group ' + cssClassPrefix + '-filter">'
           + '<input type="text" class="form-control">'
@@ -91,7 +90,9 @@
           + '<span class="glyphicon glyphicon-search"></span>'
           + '</div>'
           + '</div>');
+
       var $filterInput = $filterContainer.find('input');
+      var searchTimeout;
 
       $filterInput.keyup(function () {
         var query = $(this).val();
@@ -99,116 +100,121 @@
           clearTimeout(searchTimeout);
         }
         searchTimeout = setTimeout(function () {
-          self.filterItems(self.getItems($itemsfontainer), query);
+          self.filterItems(self.getItems($itemsContainer), query);
         }, self.options.filterTimeout);
-
       });
 
       return $filterContainer;
     },
 
     filterItems: function ($items, query) {
-      query = query || '';
-      $items.each(function (index, item) {
-        var $item = $(item);
-        var data = $item.data(dataPrefix + 'Data');
-        var text = (data.text || '').toLowerCase();
-        if (text.indexOf(query.toLowerCase()) >= 0) {
-          $item.show();
-        } else {
-          $item.hide();
-        }
-      });
+      query = $.trim(query || '');
+      if (query.length < this.options.filterMinLength){
+        $items.show();
+      }else{
+        $items.each(function (index, item) {
+          var $item = $(item);
+          var data = $item.data(dataPrefix + 'Data');
+          var text = (data.text || '').toLowerCase();
+          if (text.indexOf(query.toLowerCase()) >= 0) {
+            $item.show();
+          } else {
+            $item.hide();
+          }
+        });
+      }
     },
 
     buildMoveBtn: function (icon, direction, moveAll) {
-      var me = this;
+      var self= this;
       var $icon = $('<span class="glyphicon glyphicon-' + icon + '"/>');
-      var customClass = 'btn-move-' + direction + ((moveAll) ? '-all' : '');
-      return $('<button type="button"/>').addClass('btn btn-default ')
-        .addClass(customClass)
-        .append($icon)
-        .click(function () {
-          me.moveItems(direction, moveAll);
-        });
+      var customCssClass = 'btn-move-' + direction + ((moveAll) ? '-all' : '');
+      return $('<button/>').attr('type','button')
+                           .addClass('btn btn-default')
+                           .addClass(customCssClass)
+                           .append($icon)
+                           .click(function () {
+                             self.moveItems(direction, moveAll);
+                           });
     },
 
     refreshItems: function ($options, $container, $filterControl) {
-      var me = this;
+      var self= this;
       var activeIds = {}
-
+      //get current active items, to restore them later
       this.getItems($container, true).each(function (index, item) {
         activeIds[$(item).data(dataPrefix + 'Data').id] = true;
       });
+      //remove current items container
+      $container.find('.' + cssClassPrefix + '-items').remove();
 
-      $container.find('>.' + cssClassPrefix + '-items').remove();
-
-      var $itemsfontainer = $('<div class="list-group"/>').appendTo($container)
-        .addClass(cssClassPrefix + '-items');
-
+      var $itemsContainer = $('<div class="list-group"/>')
+                                          .appendTo($container)
+                                          .addClass(cssClassPrefix + '-items');
       var $items = $();
 
       $options.each(function () {
         var $option = $(this);
-        var data = {
-          id: this.value,
-          text: $option.text(),
-          $option: $option
-        };
-
-        var $item = $('<a href="#" class="list-group-item"/>').addClass(cssClassPrefix + '-item')
-          .data(dataPrefix + 'Data', data);
-
-        if (data.id in activeIds) {
-          $item.addClass('active');
-        }
-
-        $item.html(me.options.itemTemplate($item, data));
-
-        $item.click(function (e) {
-          me.handleItemClick(e, $items);
-        });
-
+        var active = $option.attr('value') in activeIds;
+        var $item = self.buildItem($option, active, $items);
         $items = $items.add($item);
       });
 
-      $itemsfontainer.append($items);
+      $itemsContainer.append($items);
 
       if ($filterControl) {
         this.filterItems($items, $filterControl.find('input').val());
       }
-
     },
 
-    handleItemClick: function (e, $items) {
+    buildItem: function($option, active){
+      var self = this;
+      var data = {
+        id: $option.attr('value'),
+        text: $option.text(),
+        $option: $option
+      };
+      var $item = $('<a href="#" class="list-group-item"/>')
+                      .addClass(cssClassPrefix + '-item')
+                      .addClass((active) ? 'active' : '')
+                      .data(dataPrefix + 'Data', data)                      
+                      .click(function (e) {
+                        self.handleItemClick(e);
+                      });
+      //apply item template
+      return $item.html(this.options.itemTemplate($item, data))
+    },
+
+    handleItemClick: function (e) {
       e.preventDefault();
       var $item = $(e.currentTarget);
       if (e.ctrlKey) {
         $item.toggleClass('active');
       }
       else if (e.shiftKey) {
-        var thisIndex = $items.index($item);
+        var $items = this.getItems($item.parent());
+        var index = $items.index($item);
         var activeItems = $items.filter('.active');
         var lastActiveIndex = $items.index(activeItems.last());
         var interval;
-        if (lastActiveIndex < thisIndex) {
-          interval = [lastActiveIndex, thisIndex];
+        if (lastActiveIndex < index) {
+          interval = [lastActiveIndex, index];
         } else {
           var firstActiveIndex = $items.index(activeItems.first())
-          interval = [thisIndex, firstActiveIndex];
+          interval = [index, firstActiveIndex];
         }
         $items.removeClass('active')
-          .slice(interval[0], interval[1] + 1)
-          .addClass('active');
+              .slice(interval[0], interval[1] + 1)
+              .addClass('active');
       } else {
-        $items.removeClass('active');
+        $item.siblings().removeClass('active');
         $item.addClass('active');
       }
     },
 
     refreshControls: function () {
-      var $candidates = this.getItems(this.$candidatesfontainer);
-      var $choices = this.getItems(this.$choicesfontainer);
+      var $candidates = this.getItems(this.$candidatesContainer);
+      var $choices = this.getItems(this.$choicesContainer);
 
       this.$moveAllRightBtn.attr('disabled', $candidates.size() === 0);
       this.$moveRightBtn.attr('disabled', $candidates.size() === 0);
@@ -217,27 +223,31 @@
     },
 
     getItems: function ($container, active) {
-      return $container.find('.' + cssClassPrefix + '-item' + ((active === true) ? '.active' : ''));
+      var selector = '.' + cssClassPrefix + '-item';
+      if(active){
+        selector += '.active';
+      }
+      return $container.find(selector);
     },
 
     moveItems: function (direction, all) {
       var $container;
       if (direction == 'right') {
-        $container = this.$candidatesfontainer;
+        $container = this.$candidatesContainer;
       } else {
-        $container = this.$choicesfontainer;
+        $container = this.$choicesContainer;
       }
       var selectedIds = this.getItems($container, !all)
-        .toArray()
-        .map(function (em) {
-          return $(em).data(dataPrefix + 'Data').id;
-        });
+                            .toArray()
+                            .map(function (em) {
+                              return $(em).data(dataPrefix + 'Data').id;
+                            });
       if (selectedIds.length) {
         if (direction == 'right') {
           this.$element.val((this.$element.val() || []).concat(selectedIds));
         } else {
           this.$element.find('option[value=' + selectedIds.join('],[value=') + ']')
-            .removeAttr('selected')
+                       .removeAttr('selected')
         }
         this.$element.change();
         this.refresh();
@@ -246,7 +256,6 @@
 
     setOption: function(name, value){
       this.options[name] = value;
-
       switch(name){
         case 'filterEnabled':{
           if (value){
@@ -263,14 +272,14 @@
     },
 
     destroy: function(){
-      this.$element.insertAfter(this.$container).show();
+      this.$element.show();
       this.$container.remove();
     }
   });
 
-  $.fn[pluginName] = function () {
-    if (arguments.length === 0 || (typeof arguments[0] !== 'string')){
-      var options = arguments[0];
+  $.fn[pluginName] = function (options) {
+    options = options || {};
+    if (typeof options === 'object'){
       return this.each(function (index, element) {
         var instance = $(element).data(pluginInstance);
         if (instance) {
@@ -279,27 +288,31 @@
         instance = new Chooser(element, options);
         $(element).data(pluginInstance, instance);       
       });      
-    }else{
-      var instance = $(this).data(pluginInstance);
-      var method = arguments[0];
-      var returnValue = $(this);
-      switch(method){
-        case 'option':{
-          var name = arguments[1];
-          if (arguments.length === 2){
-            returnValue = instance.options[name];
-          }else{
-            instance.setOption(name, arguments[2]);
-            returnValue = undefined;
+    }
+    else if (typeof options === 'string') {
+      var args = Array.prototype.slice.call(arguments, 1);
+      var ret = this;
+      this.each(function () {
+        var instance = $(this).data(pluginInstance);
+        switch(options){
+          case 'option':{
+            var name = args[0];
+            if (args.length === 1){
+              ret = instance.options[name];
+            }else{
+              var value = args[1];
+              instance.setOption(name, value);
+            }
+            break;
           }
-          break;
+          default:{
+            instance[options].apply(instance, args);
+          }
         }
-        case 'destroy':{
-          instance.destroy();
-          break;          
-        }
-      }
-      return returnValue;
+      });
+      return ret;
+    }else{
+      throw new Error('Invalid arguments for ' + pluginName + ': ' + options);
     }
   };
 

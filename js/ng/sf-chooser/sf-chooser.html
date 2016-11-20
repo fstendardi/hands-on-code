@@ -1,6 +1,6 @@
-<div class="sf-chooser-container">
-  <div class="sf-chooser-candidates">
-    <div class="input-group sf-chooser-filter" ng-if="$ctrl.filterEnabled">
+<div class="sfchooser-container">
+  <div class="sfchooser-candidates">
+    <div class="input-group sfchooser-filter" ng-if="$ctrl.filterEnabled">
       <input type="text" class="form-control" 
              ng-model="$ctrl.candidatesFilter"
              ng-model-options="{ debounce: filterTimeout }">
@@ -8,10 +8,12 @@
         <span class="glyphicon glyphicon-search"></span>
       </div>
     </div>    
-    <div class="list-group sf-chooser-items">
+    <div class="list-group sfchooser-items">
       <a href=""      
-         class="list-group-item sf-chooser-item" 
-         ng-repeat="item in $ctrl.getCandidates() | filter:$ctrl.candidatesFilter track by item.id"
+         class="list-group-item sfchooser-item" 
+         ng-repeat="item in $ctrl.getCandidates()
+          | filter:($ctrl.candidatesFilter.length < $ctrl.filterMinLength) ? '' : $ctrl.candidatesFilter 
+          track by item.id"
          ng-class="{'active': $ctrl.selectedCandidates[item.id]}"
          ng-click="$ctrl.candidateClick(item, $event)">             
         <ng-bind-html ng-if="!$ctrl.itemTemplateUrl" 
@@ -21,7 +23,7 @@
       </a>
     </div>
   </div>
-  <div class="sf-chooser-controls">
+  <div class="sfchooser-controls">
     <button type="button" 
             class="btn btn-default btn-move-right" 
             ng-click="$ctrl.chooseSelectedItems()"
@@ -48,8 +50,8 @@
       <span class="glyphicon glyphicon-fast-backward"></span>
     </button>
   </div>
-  <div class="sf-chooser-choices">
-    <div class="input-group sf-chooser-filter" ng-if="$ctrl.filterEnabled">
+  <div class="sfchooser-choices">
+    <div class="input-group sfchooser-filter" ng-if="$ctrl.filterEnabled">
       <input type="text" class="form-control" 
              ng-model="$ctrl.choicesFilter"
              ng-model-options="{ debounce: filterTimeout }">
@@ -57,10 +59,12 @@
         <span class="glyphicon glyphicon-search"></span>
       </div>
     </div>
-    <div class="list-group sf-chooser-items">
+    <div class="list-group sfchooser-items">
       <a href="" 
-         class="list-group-item sf-chooser-item" 
-         ng-repeat="item in $ctrl.model | filter:$ctrl.choicesFilter | orderBy:$ctrl.itemOrderBy"
+         class="list-group-item sfchooser-item" 
+         ng-repeat="item in $ctrl.model 
+         | filter:($ctrl.choicesFilter.length < $ctrl.filterMinLength) ? '' : $ctrl.choicesFilter 
+         | orderBy:$ctrl.itemOrderBy track by item.id"
          ng-class="{'active': $ctrl.selectedChoices[item.id]}"
          ng-click="$ctrl.choiceClick(item, $event)">
         <ng-bind-html ng-if="!$ctrl.itemTemplateUrl" 

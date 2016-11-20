@@ -1,0 +1,41 @@
+- Jquery in pillole
+- angularjs in pillole
+- Widget realizzato, Chooser
+   - immagine
+   - funzionalità previste
+    - simulazione selezione in stile multiselect
+    - filtro fulltext real-time
+    - template custom per gli elementi
+
+- Implementazione in jQuery
+  - Anatomia di un widget plugin
+    - iife  
+    - variabili private
+    - costruttore
+    - metodi base      
+    - registrazione
+        - initializzazione
+        - invocazione metodi e cambio opzioni
+  - Implementazione Chooser
+    - plugin decorator, decora una select multiple
+    - variabili private, defaults e ctor
+    - registrazione (short, mostrare solo il new Chooser e il setting dei defaults)
+    - build
+        - costruzione box candidati
+        - costruzione box elementi scelti
+        - costruzione filtro ricerca (rimandato a dopo il filterItems)
+        - costruzione box con i controlli(rimandato a dopo il moveItems)
+        - refresh
+          - metodo che rinfresca la UI riflettendo quanto presente nella select, e in base allo stato attuale del componente (eventuali filtri valorizzati, elementi selezionati,..)
+          - refreshItems
+            - spiegare activeIds e l'uso del filtro
+            - mostrare buildItem
+              - funzionalità template custom per elemento
+              - funzionalità selezione multiselect style
+          - refreshControls
+        - mostrare filterItems
+        - mostrare moveItems
+        - mostrare setOption e destroy
+    - mostrare utilizzo (js + html)
+
+
