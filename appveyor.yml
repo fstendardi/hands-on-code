@@ -9,6 +9,7 @@ install:
   # install modules
   - npm install
   - npm install -g gulp bower
+  - bower install
 
 # Post-install test scripts.
 test_script:
