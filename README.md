@@ -1,4 +1,4 @@
-# hands-on-code
+# Hands On Code - jQuery VS AngularJS
 [![Build status](https://ci.appveyor.com/api/projects/status/3268lqdpdpk1p55s?svg=true)](https://ci.appveyor.com/project/zeppaman/hands-on-code)
 
 This repository host project for the event https://www.meetup.com/TechItaliaTuscany/events/234912357/.
