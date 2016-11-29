@@ -4,11 +4,9 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "connect": "^3.5.0",
     "gulp-concat": "^2.6.1",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-uglify": "^2.0.0",
-    "serve-static": "^1.11.1",
     "wrench": "^1.5.9"
   },
   "devDependencies": {
