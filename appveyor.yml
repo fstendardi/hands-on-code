@@ -8,7 +8,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   # install modules
   - npm install
-  - npm bower install
+  - npm install -g gulp bower
 
 # Post-install test scripts.
 test_script:
