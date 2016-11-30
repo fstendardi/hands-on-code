@@ -1,0 +1,6 @@
+{
+  "name": "Hands on Code - jQuery VS AngularJS",
+  "tagline": "This repository host project for the event https://www.meetup.com/TechItaliaTuscany/events/234912357/.",
+  "body": "# Hands On Code - jQuery VS AngularJS\r\n[![Build status](https://ci.appveyor.com/api/projects/status/3268lqdpdpk1p55s?svg=true)](https://ci.appveyor.com/project/zeppaman/hands-on-code)\r\n\r\nThis repository host project for the event https://www.meetup.com/TechItaliaTuscany/events/234912357/.\r\n\r\nDuring this event I put jQuery and AngularJS under comparison showing an implementation of a widget, built using both technologies.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
